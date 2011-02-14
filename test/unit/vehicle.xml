@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<response id="vehicle">
+  <vehicle vehicle_id="1426" type="car">
+    <mark mark_id="45">Honda</mark>
+    <model model_id="981">Civic VIII</model>
+    <modification modification_id="264">1.8 i 16V (140 Hp)</modification>
+    <year>2008</year>
+    <steering_wheel>
+      <place steering_wheel_palce_id="left">левый</place>
+      <power steering_wheel_power_id="hydro">гидро</power>
+      <adjustment steering_wheel_adjustment_id="2">в двух плоскостях</adjustment>
+    </steering_wheel>
+    <engine>
+      <type engine_type_id="petrol_injector">бензин инжектор</type>
+      <volume unit="cm3">1798</volume>
+      <power unit="hp">140</power>
+    </engine>
+    <drive>
+      <type drive_type_id="front">передний</type>
+    </drive>
+    <gearbox>
+      <type gearbox_type_id="automatic">автоматическая</type>
+    </gearbox>
+    <body>
+      <type body_type_id="hatchback5">хэтчбек (5-ти дв.)</type>
+      <color body_color_id="beige" metallic="1">бежевый металлик</color>
+    </body>
+    <mileage>
+      <value unit="km">9000</value>
+    </mileage>
+    <condition condition_id="excellent">отличное</condition>
+    <price>
+      <value unit="rub">699000</value>
+      <bargaining />
+    </price>
+    <availability availability_id="available">в наличии</availability>
+    <abs />
+    <asr />
+    <cruise_control />
+    <trip_computer />
+    <parktronic />
+    <esp />
+    <light_alloy_wheels />
+    <sensors>
+      <rain />
+      <light />
+    </sensors>
+    <headlights>
+      <xenon />
+      <washer />
+    </headlights>
+    <mirrors>
+      <power />
+      <defroster />
+    </mirrors>
+    <windows>
+      <power window_power_id="all">все</power>
+    </windows>
+    <seats>
+      <heater />
+      <driver_adjustment>по высоте</driver_adjustment>
+    </seats>
+    <alarm_system />
+    <central_lock />
+    <airbag>8</airbag>
+    <climate_control>климат-контроль</climate_control>
+    <audio>MP3</audio>
+    <compartment>кожа</compartment>
+    <hatch />
+    <description>
+      <![CDATA[Покупалась новой у дилера ,1 хозяин.Октябрь 2008г., состояние нового автомобиля, ни одной аварии, ни одного перекрашенного элемента! Зимой не эксплуатировался, хранился в тёплом гараже, первое ТО пройдено,сервисная книжка, комплект ключей, на гарантии до октября 2011г.
+Ксенон, защита двигателя, сетка в багажник,передние и задние парктроники, оригинальные диски R17.Панорамная крыша.Максимальная комплектация!!!
+Идеальный автомобиль для города, довольно шустренький и экономичный: город 8-9литров, трасса 6 литров.
+ABS, EBD, BA, VSA, 4 подушки и 4 шторки безопасности, климат-контроль, круиз-контроль, электропривод стеклоподъемников, настройки и складывания зеркал, подогрев передних сидений и зеркал, регулировка руля по углу наклона и вылету, AM/FM/RDS/1CD/MP3/WMA-магнитола (управление на руле, 6 динамиков), центральный замок с ДУ, иммобилайзер, сигнализация, бортовой компьютер, электроусилитель руля, кнопка &quot;START&quot; запуска двигателя, подлокотник-бокс передних сидений, подлокотник задних сидений, электрокорректор фар, омыватель фар, противотуманные фары, повторители поворотов в зеркалах, обод рулевого колеса обшитый кожей, легкосплавные диски 17&quot;, датчик дождя, датчик ближнего света, датчик громкости аудиосистемы, охлаждаемый перчаточный ящик, алюминиевые накладки на педали, климат-контроль раздельный, кожаный салон, ксенон, парктроник, стеклянная крыша.Стоимость нового автомобиля 941 050 руб. , доплата за цвет металлик или перламутр 8 000 руб.
+]]>
+    </description>
+    <inspection_place>Энергетиков д.67, Екатерининский д.7</inspection_place>
+    <uin>87</uin>
+    <photos>
+      <photo photo_id="13404">
+        <thumbnail>http://www.maxposter.ru/photo/6/1426/thumbnail/9d332845cac139df836cb12cbc0c19c1.jpg</thumbnail>
+        <original>http://www.maxposter.ru/photo/6/1426/original/9d332845cac139df836cb12cbc0c19c1.jpg</original>
+      </photo>
+      <photo photo_id="13399">
+        <thumbnail>http://www.maxposter.ru/photo/6/1426/thumbnail/2de269643a8247e819ec3da5d494e24d.jpg</thumbnail>
+        <original>http://www.maxposter.ru/photo/6/1426/original/2de269643a8247e819ec3da5d494e24d.jpg</original>
+      </photo>
+      <photo photo_id="13400">
+        <thumbnail>http://www.maxposter.ru/photo/6/1426/thumbnail/8e4b6e5e0f1a3f3d7e1e22121996e876.jpg</thumbnail>
+        <original>http://www.maxposter.ru/photo/6/1426/original/8e4b6e5e0f1a3f3d7e1e22121996e876.jpg</original>
+      </photo>
+      <photo photo_id="13401">
+        <thumbnail>http://www.maxposter.ru/photo/6/1426/thumbnail/51184df1e91060af36c6f0a45630f483.jpg</thumbnail>
+        <original>http://www.maxposter.ru/photo/6/1426/original/51184df1e91060af36c6f0a45630f483.jpg</original>
+      </photo>
+      <photo photo_id="13403">
+        <thumbnail>http://www.maxposter.ru/photo/6/1426/thumbnail/1e14dcf437f68102e663cd2fb9e168c7.jpg</thumbnail>
+        <original>http://www.maxposter.ru/photo/6/1426/original/1e14dcf437f68102e663cd2fb9e168c7.jpg</original>
+      </photo>
+      <photo photo_id="13402">
+        <thumbnail>http://www.maxposter.ru/photo/6/1426/thumbnail/b164021503b9e7538b1881f1cac5ba5f.jpg</thumbnail>
+        <original>http://www.maxposter.ru/photo/6/1426/original/b164021503b9e7538b1881f1cac5ba5f.jpg</original>
+      </photo>
+      <photo photo_id="13406">
+        <thumbnail>http://www.maxposter.ru/photo/6/1426/thumbnail/2ca5d64d01b9cf220aa6deabc4554b1e.jpg</thumbnail>
+        <original>http://www.maxposter.ru/photo/6/1426/original/2ca5d64d01b9cf220aa6deabc4554b1e.jpg</original>
+      </photo>
+      <photo photo_id="13407">
+        <thumbnail>http://www.maxposter.ru/photo/6/1426/thumbnail/631fd4ad291fecc55d61e8bdfec146c2.jpg</thumbnail>
+        <original>http://www.maxposter.ru/photo/6/1426/original/631fd4ad291fecc55d61e8bdfec146c2.jpg</original>
+      </photo>
+      <photo photo_id="13335">
+        <thumbnail>http://www.maxposter.ru/photo/6/1426/thumbnail/6c4bcf06affba6c6a554bafc5db9c0e2.jpg</thumbnail>
+        <original>http://www.maxposter.ru/photo/6/1426/original/6c4bcf06affba6c6a554bafc5db9c0e2.jpg</original>
+      </photo>
+      <photo photo_id="13337">
+        <thumbnail>http://www.maxposter.ru/photo/6/1426/thumbnail/0ab1a4040ba8416793a11847611cc21d.jpg</thumbnail>
+        <original>http://www.maxposter.ru/photo/6/1426/original/0ab1a4040ba8416793a11847611cc21d.jpg</original>
+      </photo>
+      <photo photo_id="13336">
+        <thumbnail>http://www.maxposter.ru/photo/6/1426/thumbnail/1f20839349999e42ebfcfe767cd26ed2.jpg</thumbnail>
+        <original>http://www.maxposter.ru/photo/6/1426/original/1f20839349999e42ebfcfe767cd26ed2.jpg</original>
+      </photo>
+      <photo photo_id="13405">
+        <thumbnail>http://www.maxposter.ru/photo/6/1426/thumbnail/e142fa63e8e45527f6cfa4444ba5fd90.jpg</thumbnail>
+        <original>http://www.maxposter.ru/photo/6/1426/original/e142fa63e8e45527f6cfa4444ba5fd90.jpg</original>
+      </photo>
+    </photos>
+  </vehicle>
+</response>
