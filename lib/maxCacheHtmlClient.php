@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__).'/maxCacheXmlClient.class.php');
+require_once(dirname(__FILE__).'/maxCacheXmlClient.php');
 
 /**
  * К возможностям класса maxCacheXmlClient добавлено:

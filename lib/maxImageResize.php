@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__).'/maxGDAdapter.class.php');
+require_once(dirname(__FILE__).'/maxGDAdapter.php');
 
 class maxImageResize
 {

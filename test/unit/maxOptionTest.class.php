@@ -1,5 +1,5 @@
 <?php
-require_once($max_path.'/maxOption.class.php');
+require_once($max_path.'/maxOption.php');
 
 class maxOptionTest extends maxOption
 {

@@ -1,5 +1,5 @@
 <?php
-require_once($max_path.'/maxCacheXmlClient.class.php');
+require_once($max_path.'/maxCacheXmlClient.php');
 
 class maxCacheXmlClientTest extends maxCacheXmlClient
 {

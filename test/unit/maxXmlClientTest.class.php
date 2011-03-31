@@ -1,5 +1,5 @@
 <?php
-require_once($max_path.'/maxXmlClient.class.php');
+require_once($max_path.'/maxXmlClient.php');
 
 class maxXmlClientTest extends maxXmlClient
 {

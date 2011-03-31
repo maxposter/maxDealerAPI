@@ -1,5 +1,5 @@
 <?php
-require_once($max_path.'/maxThumbnail.class.php');
+require_once($max_path.'/maxThumbnail.php');
 
 class maxThumbnailTest extends maxThumbnail
 {

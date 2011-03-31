@@ -1,7 +1,7 @@
 <?php
 require_once(dirname(__FILE__).'/../lib/unit.php');
 
-require_once($max_path.'/maxImageResize.class.php');
+require_once($max_path.'/maxImageResize.php');
 
 $t = new lime_test(7, new lime_output_color());
 

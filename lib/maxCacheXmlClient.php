@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__).'/maxXmlClient.class.php');
+require_once(dirname(__FILE__).'/maxXmlClient.php');
 
 /**
  * К возможностям класса maxXmlClient добавлено кэширование данных на стороне Клиента.

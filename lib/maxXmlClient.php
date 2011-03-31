@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__).'/maxOption.class.php');
+require_once(dirname(__FILE__).'/maxOption.php');
 
 /**
  * Реализация класса для запросов экспортных данных автосалонов от Интернет-сервиса MaxPoster

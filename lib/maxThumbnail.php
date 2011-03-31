@@ -1,6 +1,6 @@
 <?php
-require_once(dirname(__FILE__).'/maxOption.class.php');
-require_once(dirname(__FILE__).'/maxImageResize.class.php');
+require_once(dirname(__FILE__).'/maxOption.php');
+require_once(dirname(__FILE__).'/maxImageResize.php');
 
 /**
  * Реализация класса для преобразования фотографий под размеры сайтов автосалонов.
