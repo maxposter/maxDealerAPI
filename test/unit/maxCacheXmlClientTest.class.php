@@ -90,10 +90,10 @@ class maxCacheXmlClientTest2 extends maxCacheXmlClient
   {
     $this->cacheActualPoint = $_cacheActualPoint;
   }
-  
-  protected function getCachePath($_type)
+
+  protected function getCachePath($type, $name)
   {
-    return isset($this->cachePaths[$_type]) ? dirname(__FILE__).'/'.$this->cachePaths[$_type] : false;
+    return isset($this->cachePaths[$type]) ? dirname(__FILE__).'/'.$this->cachePaths[$type] : false;
   }
 
   public function loadFromCache($_type, $_themeName)

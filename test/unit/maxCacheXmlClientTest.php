@@ -141,7 +141,9 @@ $t->info('cacheXML()');
 $tc = new maxCacheXmlClientTest3();
 $tc->setRequestThemeName('vehicles');
 $tc->setRequestParams(array('mark'=>'Audi'));
-$tc->xml = DOMDocument::loadXML('<?xml version="1.0" encoding="utf-8"?><response id="vehicles"/>');
+$dom = new DOMDocument;
+$dom->loadXML('<?xml version="1.0" encoding="utf-8"?><response id="vehicles"/>');
+$tc->xml = $dom;
 $tc->setResponseHeaders(null, 'Last-Modified: '.date('Y-m-d H:i:s', time()-10800));
 $tc->setResponseHeaders(null, 'Expires: '.date('Y-m-d H:i:s', time()+10800));
 $tc->cacheActualPointStr = ''.(time()-10800).' '.(time() + 10800);
@@ -156,7 +158,9 @@ $t->ok(
   'Cached rigth XML.'
 );
 $tc = new maxCacheXmlClientTest3();
-$tc->xml = DOMDocument::loadXML('<?xml version="1.0" encoding="utf-8" ?><response id="error"></response>');
+$dom = new DOMDocument();
+$dom->loadXML('<?xml version="1.0" encoding="utf-8" ?><response id="error"></response>');
+$tc->xml = $dom;
 $tc->setResponseHeaders(null, 'Last-Modified: '.date('Y-m-d H:i:s', time()-10800));
 $tc->setResponseHeaders(null, 'Expires: '.date('Y-m-d H:i:s', time()+10800));
 $t->is($tc->cacheXML(), false, 'XML was not cached, because error theme does not cached.');

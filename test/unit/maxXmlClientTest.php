@@ -156,7 +156,9 @@ catch (maxException $e)
   );
 }
 $tc = new maxXmlClientTest(array('dealer_id' => 123, 'api_version' => 1));
-$tc->xml = DOMDocument::loadXML('<?xml version="1.0" encoding="utf-8" ?><response id="vehicle" />');
+$dom = new DOMDocument;
+$dom->loadXML('<?xml version="1.0" encoding="utf-8" ?><response id="vehicle" />');
+$tc->xml = $dom;
 $t->is($tc->getResponseThemeName(), 'vehicle', 'Define response theme name = vehicle.');
 
 $t->info('getXml()');

@@ -63,7 +63,9 @@ $t->is(
 
 $t->info('xsltTransform()');
 $tc = new maxCacheHtmlClientTest2();
-$tc->xml = DOMDocument::load(dirname(__FILE__).'/vehicle.xml');
+$dom = new DOMDocument;
+$dom->load(dirname(__FILE__).'/vehicle.xml');
+$tc->xml = $dom;
 $tc->xsltPath = dirname(__FILE__).'/vehicle.xsl';
 $t->is(
   $tc->xsltTransform('xslt_name'),
@@ -78,7 +80,9 @@ $t->is(
 
 $t->info('transformXml2Html()');
 $tc = new maxCacheHtmlClientTest2();
-$tc->xml = DOMDocument::load(dirname(__FILE__).'/vehicle.xml');
+$dom = new DOMDocument;
+$dom->load(dirname(__FILE__).'/vehicle.xml');
+$tc->xml = $dom;
 $tc->xsltPath = dirname(__FILE__).'/vehicle.xsl';
 $t->is(
   $tc->transformXml2Html(),
@@ -96,7 +100,9 @@ $t->is(
   'Cached right HTML'
 );
 $tc = new maxCacheHtmlClientTest2();
-$tc->xml = DOMDocument::load(dirname(__FILE__).'/vehicle.xml');
+$dom = new DOMDocument;
+$dom->load(dirname(__FILE__).'/vehicle.xml');
+$tc->xml = $dom;
 $tc->xsltPath = dirname(__FILE__).'/vehicle.xsl';
 $tc->setXsltTemplate('new_template');
 $tc->transformXml2Html();
@@ -106,7 +112,9 @@ $t->is(
   'Apllied custom XSLT template.'
 );
 $tc = new maxCacheHtmlClientTest2();
-$tc->xml = DOMDocument::loadXML('<?xml version="1.0" encoding="utf-8"?><response id="error"/>');
+$dom = new DOMDocument;
+$dom->loadXML('<?xml version="1.0" encoding="utf-8"?><response id="error"/>');
+$tc->xml = $dom;
 $tc->xsltPath = dirname(__FILE__).'/vehicle.xsl';
 $tc->setXsltTemplate('new_template');
 $tc->transformXml2Html();
@@ -126,4 +134,3 @@ $tc->xsltName = array();
 $tc->setXsltTemplate('second_xslt_theme');
 $tc->loadHtmlFromCache();
 $t->is($tc->xsltName, array('second_xslt_theme'), 'xslt themplate name overvrite request theme name.');
-
