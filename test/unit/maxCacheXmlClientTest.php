@@ -124,7 +124,7 @@ $tc->cachePaths = array('xml'=>'vehicle.xml');
 $t->is(
   $tc->loadXmlFromCache()->getElementsByTagName('response')->item(0)->getAttribute('id'),
   'vehicle',
-  'XML was loaded. DOMDocumetn was created.'
+  'XML was loaded. DOMDocument was created.'
 );
 
 $tc = new maxCacheXmlClientTest2();

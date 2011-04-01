@@ -59,7 +59,7 @@ class maxXmlClient extends maxOption
       // Параметры CURL
       'CURL' => array(
         //CURLOPT_TIMEOUT => 30         // Ожидать ответа в течение 30 секунд
-      )
+      ),
     );
   }
 

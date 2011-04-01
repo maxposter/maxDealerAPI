@@ -142,7 +142,7 @@ $t->is(
 
 $t->info('getResponseThemeName()');
 $tc = new maxXmlClientTest(array('dealer_id' => 123));
-try 
+try
 {
   $tc->getResponseThemeName();
   $t->fail('Can not define response theme, because does not set response XML. Must be thrown exception.');

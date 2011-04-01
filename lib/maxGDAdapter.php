@@ -84,7 +84,7 @@ class maxGDAdapter
       $this->sourceMime = $imgData['mime'];
       $this->sourceWidth = $imgData[0];
       $this->sourceHeight = $imgData[1];
-      
+
       return true;
     }
     else
@@ -97,7 +97,7 @@ class maxGDAdapter
    * Загрузка изображения из переменной
    *
    * @param data $image           // Изображени
-   * @param string $mime          // MIME-type          
+   * @param string $mime          // MIME-type
    * @return boolean              True при успешной загрузке, либо exception
    */
   public function loadData($image, $mime)
@@ -108,7 +108,7 @@ class maxGDAdapter
       $this->sourceMime = $mime;
       $this->sourceWidth = imagesx($this->source);
       $this->sourceHeight = imagesy($this->source);
-      
+
       return true;
     }
     else
@@ -116,7 +116,7 @@ class maxGDAdapter
       throw new Exception(sprintf('Image MIME type %s not supported', $mime));
     }
   }
-  
+
   /**
    * Возвращает ширину исходного изображения, либо выбрасывает exception если исходное изображение не загружено
    *
@@ -130,7 +130,7 @@ class maxGDAdapter
     }
     return $this->sourceWidth;
   }
-  
+
   /**
    * Возвращает высоту исходного изображения, либо выбрасывает exception если исходное изображение не загружено
    *
@@ -144,7 +144,7 @@ class maxGDAdapter
     }
     return $this->sourceHeight;
   }
-  
+
   /**
    * Преобразование исходного изображения
    *
@@ -160,7 +160,7 @@ class maxGDAdapter
       // Преобразование не требуется
       $this->thumb = $this->source;
     }
-    else 
+    else
     {
       $size = $imageResize->calcResizeParams($width, $height, $this->getSourceWidth(), $this->getSourceHeight());
 
