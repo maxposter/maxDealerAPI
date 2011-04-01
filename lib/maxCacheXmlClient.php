@@ -89,7 +89,7 @@ class maxCacheXmlClient extends maxXmlClient
    */
   protected function getCacheHashKey($_themeName)
   {
-    return $_themeName.$this->getRequestParamsAsString($this->getRequestParams());
+    return $_themeName.$this->getRequestParamsAsString($this->getRequestParams()).$this->getRequestParamsAsString($this->getGetParameters());
   }
 
   /**

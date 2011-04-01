@@ -185,10 +185,16 @@ class maxCacheHtmlClient extends maxCacheXmlClient
   /**
    * Получение HTML
    *
+   * @param string $_xsltTemplate   Название XSLT-шаблона для преобразования XML в HTML
    * @return html
    */
-  public function getHtml()
+  public function getHtml($_xsltTemplate = null)
   {
+    if (!is_null($_xsltTemplate))
+    {
+      $this->setXsltTemplate($_xsltTemplate);
+    }
+
     try
     {
       if (!($html = $this->loadHtmlFromCache()))

@@ -15,11 +15,14 @@ class maxXmlClient extends maxOption
     // Название темы для запроса к интернет-сервесу
     $requestThemeName,
 
+    // Данные заголовков ответа "Last-Modified" и "Expires" от запроса к Интернет-сервису
+    $responseHeaders = false,
+
     // Параметры запроса (будут переданы POST-запросом Интернет-сервису)
     $requestParams = array(),
 
-    // Данные заголовков ответа "Last-Modified" и "Expires" от запроса к Интернет-сервису
-    $responseHeaders = false,
+    // Параметры паджинатора
+    $getParameters = array(),
 
     // Название темы, полученной в ответ на запрос
     $responseThemeName
@@ -60,6 +63,8 @@ class maxXmlClient extends maxOption
       'CURL' => array(
         //CURLOPT_TIMEOUT => 30         // Ожидать ответа в течение 30 секунд
       ),
+
+      'max_per_page' => '50',
     );
   }
 
@@ -94,25 +99,89 @@ class maxXmlClient extends maxOption
     return $this->requestThemeName;
   }
 
+
+    /**
+     * Merges any number of arrays of any dimensions, the later overwriting
+     * previous keys, unless the key is numeric, in whitch case, duplicated
+     * values will not be added.
+     *
+     * The arrays to be merged are passed as arguments to the function.
+     *
+     * @access public
+     * @return array Resulting array, once all have been merged
+     */
+    public function mergeDeep() {
+        // Holds all the arrays passed
+        $params = func_get_args();
+
+        // First array is used as the base, everything else overwrites on it
+        $return = array_shift($params);
+
+        // Merge all arrays on the first array
+        foreach ($params as $array) {
+            foreach ($array as $key => $value) {
+                // Numeric keyed values are added (unless already there)
+                if (is_numeric($key) && (!in_array($value, $return))) {
+                    if (is_array($value)) {
+                        $return[] = $this->mergeDeep($return[$key], $value);
+                    } elseif (false !== $value) {
+                        $return[] = $value;
+                    }
+
+                // String keyed values are replaced
+                } else {
+                    if (isset($return[$key]) && is_array($value) && is_array($return[$key])) {
+                        $return[$key] = $this->mergeDeep($return[$key], $value);
+                    } elseif (false === $value) {
+                        unset($return[$key]);
+                    } else {
+                        $return[$key] = $value;
+                    }
+                }
+            }
+        }
+
+        return $return;
+    }
+
   /**
    * Установка параметров, которые должны быть переданы Интернет-сервису MaxPoster
    *
-   * @param array $_params
+   * @param array $params
    */
-  public function setRequestParams(array $_params)
+  public function setRequestParams(array $params)
   {
-    $this->requestParams = $_params;
-    return true;
+    $this->requestParams = $this->mergeDeep($this->requestParams, $params);
   }
 
   /**
    * Возвращает параметры, которые должны быть перенады Интернет-сервису MaxPoster
    *
-   * @return unknown
+   * @return array
    */
   public function getRequestParams()
   {
     return $this->requestParams;
+  }
+
+  /**
+   * Установка параметров, которые должны быть переданы сервису как часть query-string
+   *
+   * @param  array  $params
+   */
+  public function setGetParameters($params = array())
+  {
+    $this->getParameters = $this->mergeDeep($this->getParameters, (array) $params);
+  }
+
+  /**
+   * Вернуть параметры для отправки сервису методом GET
+   *
+   * @return array
+   */
+  public function getGetParameters()
+  {
+    return $this->getParameters;
   }
 
   /**
@@ -258,18 +327,21 @@ class maxXmlClient extends maxOption
   {
     $ch = curl_init();
 
-    foreach ($this->getCurlOptions() as $id => $value)
-    {
+    foreach ($this->getCurlOptions() as $id => $value) {
       curl_setopt($ch, $id, $value);
     }
 
-    curl_setopt($ch, CURLOPT_URL, $_path);
-
-    if (is_array($_postParams) && count($_postParams))
-    {
+    if (is_array($_postParams) && count($_postParams)) {
       curl_setopt($ch, CURLOPT_POST, true);
       curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($_postParams));
     }
+
+    $path = $_path;
+    if (false !== $getParams = $this->getGetParameters()) {
+      $path .= '?' . http_build_query($getParams);
+    }
+
+    curl_setopt($ch, CURLOPT_URL, $path);
 
     return $ch;
   }
