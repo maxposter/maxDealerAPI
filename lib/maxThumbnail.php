@@ -102,13 +102,15 @@ class maxThumbnail extends maxOption
    * Проверка наличия каталога для сохранения файла.
    * Если каталога/ов нет, то они создаются.
    *
-   * @param unknown_type $_dir
+   * @param string $dir
    */
-  protected function checkDir($_dir)
+  protected function checkDir($dir)
   {
-    if (!is_dir($_dir))
-    {
-      mkdir($_dir, 0775, true);
+    if (!is_dir($dir)) {
+      if ($this->checkDir(dirname($dir))) {
+        mkdir($dir, 0777, false);
+        chmod($dir, 0777);
+      }
     }
 
     return true;
@@ -124,7 +126,12 @@ class maxThumbnail extends maxOption
   protected function savePhoto($_filePath, $_photo)
   {
     $this->checkDir(dirname($_filePath));
-    return file_put_contents($_filePath, $_photo);
+
+    $photo = file_put_contents($_filePath, $_photo);
+
+    chmod($_filePath, 0666);
+
+    return $photo;
   }
 
   /**
@@ -240,6 +247,7 @@ class maxThumbnail extends maxOption
         	$this->checkDir(dirname($thumbPath));
         	$imageResize->resize($size['width'], $size['height']);
         	$imageResize->save($thumbPath);
+            chmod($thumbPath, 0666);
 
         	header('Content-type: '.$imageResize->getMime());
         	echo $imageResize->toString();
