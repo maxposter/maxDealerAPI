@@ -162,27 +162,33 @@ class maxCacheXmlClient extends maxXmlClient
     return $this->cacheActualPoint;
   }
 
-  /**
-   * Рекурсивное удаление каталога и вложенных в него подкаталогов и файлов.
-   * Используется для удаления кэша, потерявшего актуальность.
-   *
-   * @param string $_dir   Путь к каталогу, который должен быть удален
-   */
-  protected function delTree($_dir)
-  {
-    foreach(glob($_dir.'*', GLOB_MARK) as $file)
+
+    /**
+     * Рекурсивное удаление каталога и вложенных в него подкаталогов и файлов.
+     * Используется для удаления кэша, потерявшего актуальность.
+     *
+     * @param string $dir   Путь к каталогу, который должен быть удален
+     */
+    protected function delTree($dir)
     {
-      if (DIRECTORY_SEPARATOR == substr($file, -1))
-      {
-        $this->delTree($file);
-        @rmdir($file);
-      }
-      else
-      {
-        @unlink($file);
-      }
+        $list = glob($dir . '*', GLOB_MARK);
+        // в случае когда нет файлов в кеше
+        if (!$list && !is_array($list)) {
+            return false;
+        }
+
+        foreach($list as $file) {
+            if (DIRECTORY_SEPARATOR == substr($file, -1)) {
+                $this->delTree($file);
+                @rmdir($file);
+            } else {
+                @unlink($file);
+            }
+        }
+
+        return true;
     }
-  }
+
 
   /**
    * Сброс кэша
