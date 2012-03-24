@@ -28,7 +28,7 @@ $t->is(
 $t->info('getSourcePhotoUrl()');
 $t->is(
   $tc->getSourcePhotoUrl(123, 54321, 'sdf767sd6f8sd6f8sdfgsd.jpeg'),
-  'http://www.maxposter.ru/photo/123/54321/original/sdf767sd6f8sd6f8sdfgsd.jpeg',
+  'http://www.maxposter.ru/photo/123/54321/orig/sdf767sd6f8sd6f8sdfgsd.jpeg',
   'Source photo URL was retrived right.'
 );
 
@@ -126,20 +126,21 @@ catch (Exception $e)
 
 $t->info('getUrlPattern()');
 $tc->setOption('dealer_id', 123);
+$tc->setOption('source_photo_dir', 'test_source');
 $tc->setOption('allowed_photo_sizes', array(
   '640x480'  => array('width' => 640, 'height' => 480),
   '120x90'  => array('width' => 120, 'height' => 90),
 ));
 $t->is(
   $tc->getUrlPattern(),
-  '\/([0-9]*)\/(640x480|120x90)\/([0-9a-z]*.(jpg|jpeg))$',
+  '\/([0-9]*)\/(640x480|120x90|'.$tc->getOption('source_photo_dir').')\/([0-9a-z]*.(jpg|jpeg))$',
   'Got right url pattern for once dealer'
 );
 
 $tc->setOption('dealer_id', '123_456');
 $t->is(
   $tc->getUrlPattern(),
-  '\/(123|456)\/([0-9]*)\/(640x480|120x90)\/([0-9a-z]*.(jpg|jpeg))$',
+  '\/(123|456)\/([0-9]*)\/(640x480|120x90|'.$tc->getOption('source_photo_dir').')\/([0-9a-z]*.(jpg|jpeg))$',
   'Got right url pattern for some dealers'
 );
 
